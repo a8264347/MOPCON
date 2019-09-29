@@ -21,7 +21,7 @@
 
 - **URL**
 
-    /api/2019/community
+    /2019/community
 
 - **Method**
 
@@ -82,7 +82,7 @@
 
 - **URL**
 
-  /api/2019/community/organizer/:id
+  /2019/community/organizer/:id
 
 - **Method**
 
@@ -161,7 +161,7 @@
 
 - **URL**
 
-  /api/2019/community/participant/:id
+  /2019/community/participant/:id
 
 - **Method**
 

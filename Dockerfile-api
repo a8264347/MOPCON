@@ -1,0 +1,4 @@
+FROM hashman/apache2-php-fpm:7.2
+
+COPY api/ /code
+RUN chmod -R 777 storage

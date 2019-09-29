@@ -61,13 +61,13 @@ class SessionController extends TestCase
 
     public function testGetSessionSchedule()
     {
-        $response = $this->get('/api/2019/session/');
+        $response = $this->get('/2019/session/');
         $this->assertEquals(200, $this->response->status());
     }
 
     public function testGetSessionList()
     {
-        $response = $this->get('/api/2019/session/list');
+        $response = $this->get('/2019/session/list');
         $this->assertEquals(200, $this->response->status());
     }
 
@@ -75,7 +75,7 @@ class SessionController extends TestCase
     {
         $id = rand(1, count($this->sessions));
         $tags = implode(',', ['ai', 'cloud']);
-        $response = $this->get('/api/2019/session/list?tags=' . $tags);
+        $response = $this->get('/2019/session/list?tags=' . $tags);
         $compared = array_values($this->sessions);
 
         $this->assertEquals(200, $this->response->status());
@@ -85,7 +85,7 @@ class SessionController extends TestCase
     {
         $id = rand(1, count($this->sessions));
         $tags = implode(['qwdfwe','acvbb']);
-        $response = $this->get('/api/2019/session/list?tags=' . $tags);
+        $response = $this->get('/2019/session/list?tags=' . $tags);
 
         $this->assertEquals(200, $this->response->status());
 
@@ -98,13 +98,13 @@ class SessionController extends TestCase
 
     public function testGetSession()
     {
-        $response = $this->get('/api/2019/session/2019001');
+        $response = $this->get('/2019/session/2019001');
         $this->assertEquals(200, $this->response->status());
     }
 
     public function testGetSessionWithNoExistId()
     {
-        $response = $this->get('/api/2019/session/100');
+        $response = $this->get('/2019/session/100');
 
         $this->assertEquals(404, $this->response->status());
     }
@@ -112,7 +112,7 @@ class SessionController extends TestCase
     public function testGetSessionWithWrongIdType()
     {
         $id = "test";
-        $response = $this->get('/api/2019/session/' . $id);
+        $response = $this->get('/2019/session/' . $id);
 
         $this->assertEquals(400, $this->response->status());
 

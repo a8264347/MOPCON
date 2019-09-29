@@ -16,4 +16,9 @@ class InitialController extends Controller
     {
         return $this->returnSuccess('Success.', $this->jsonAry);
     }
+
+    public function health()
+    {
+        return $this->returnSuccess('Success.');
+    }
 }

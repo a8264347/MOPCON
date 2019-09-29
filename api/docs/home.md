@@ -19,7 +19,7 @@
 
 - **URL**
 
-    /api/2019/home
+    /2019/home
 
 - **Method**
 

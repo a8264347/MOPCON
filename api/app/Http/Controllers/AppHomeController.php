@@ -22,7 +22,7 @@ class AppHomeController extends Controller
             return $value;
         }, $this->jsonAry);
 
-        $request = Request::create('/api/2019/news', 'GET');
+        $request = Request::create('/2019/news', 'GET');
         $response = json_decode($app->dispatch($request)->getContent(), true);
         $this->output['news'] = $response['data'] ?? [];
     }

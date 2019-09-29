@@ -104,7 +104,7 @@ Returns json data about sponsor information.
 * **URL**
   * **贊助商資訊**
 
-    `/api/2019/sponsor`
+    `/2019/sponsor`
 
 * **Method:**
 
@@ -125,7 +125,7 @@ Returns json data about sponsor information.
   * **Code:** 200 <br />
     **Content:**
 
-    `/api/2019/sponsor`
+    `/2019/sponsor`
     ```json
     {
       "success": true,
@@ -183,7 +183,7 @@ Returns json data about sponsor information.
       }
     }
     ```
-    `/api/2019/sponsor?sponsor_id=1`
+    `/2019/sponsor?sponsor_id=1`
     ```json
     {
         "success": true,
@@ -233,7 +233,7 @@ Returns json data about sponsor information.
 
   ```javascript
     $.ajax({
-      url: "/api/2019/sponsor",
+      url: "/2019/sponsor",
       dataType: "json",
       type : "GET",
       success : function(r) {

@@ -33,7 +33,7 @@ Facebook API 的 resopnse 只會有一層 array，預設回傳粉專的前20篇�
 * **URL**
   * **粉專貼文資訊**
 
-    `/api/facebook/posts`
+    `/facebook/posts`
 
 * **Method:**
 
@@ -115,7 +115,7 @@ Facebook API 的 resopnse 只會有一層 array，預設回傳粉專的前20篇�
 
   ```javascript
     $.ajax({
-      url: "/api/facebook/posts", // 預設回傳20篇粉專貼文
+      url: "/facebook/posts", // 預設回傳20篇粉專貼文
       dataType: "json",
       type: "GET",
       success: function(r) {
@@ -125,7 +125,7 @@ Facebook API 的 resopnse 只會有一層 array，預設回傳粉專的前20篇�
   ```
   ```javascript
     $.ajax({
-      url: "/api/facebook/posts?limit=50", // 回傳50篇粉專貼文 上限為100
+      url: "/facebook/posts?limit=50", // 回傳50篇粉專貼文 上限為100
       dataType: "json",
       type: "GET",
       success: function(r) {

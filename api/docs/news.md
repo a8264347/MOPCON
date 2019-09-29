@@ -19,7 +19,7 @@
 ### Request
 - **URL**
 
-    /api/2019/news
+    /2019/news
 
 - **Method**
 
@@ -65,7 +65,7 @@
 
 **URL**
 
-    /api/2019/news/:id
+    /2019/news/:id
 
 - **Method**
 

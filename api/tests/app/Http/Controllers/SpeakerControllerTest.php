@@ -15,7 +15,7 @@ class SpeakerControllerTest extends TestCase
         putenv('APP_ENV=' . $env);
 
         /** act */
-        $response = $this->call('GET', '/api/2019/speaker');
+        $response = $this->call('GET', '/2019/speaker');
         $result = json_decode($response->getContent(), true);
 
         /** assert **/
@@ -30,7 +30,7 @@ class SpeakerControllerTest extends TestCase
         putenv('RESOURCE_PATH=' . __DIR__ . '/../../../');
 
         /** act */
-        $response = $this->call('GET', '/api/2019/speaker');
+        $response = $this->call('GET', '/2019/speaker');
         $result = json_decode($response->getContent(), true);
 
         /** assert **/
@@ -44,7 +44,7 @@ class SpeakerControllerTest extends TestCase
         putenv('APP_ENV=develop');
 
         /** act */
-        $response = $this->call('GET', '/api/2019/speaker/1');
+        $response = $this->call('GET', '/2019/speaker/1');
         $result = json_decode($response->getContent(), true);
 
         /** assert **/
@@ -58,7 +58,7 @@ class SpeakerControllerTest extends TestCase
         putenv('APP_ENV=develop');
 
         /** act */
-        $response = $this->call('GET', '/api/2019/speaker/tags');
+        $response = $this->call('GET', '/2019/speaker/tags');
         $result = json_decode($response->getContent(), true);
 
         /** assert **/

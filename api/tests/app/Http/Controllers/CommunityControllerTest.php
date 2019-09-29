@@ -21,7 +21,7 @@ class CommunityControllerTest extends TestCase
 
     public function testGetCommunityList()
     {
-        $response = $this->get('/api/2019/community/');
+        $response = $this->get('/2019/community/');
         $compared = [];
         array_walk($this->dataset, function ($subset, $key) use (&$compared) {
             $compared[$key] = array_map(function ($value) {
@@ -44,7 +44,7 @@ class CommunityControllerTest extends TestCase
     {
         $communities = $this->dataset['community'];
         $id = rand(1, count($communities));
-        $response = $this->get('/api/2019/community/organizer/' . $id);
+        $response = $this->get('/2019/community/organizer/' . $id);
         $compared = $this->searchTargetById($communities, $id);
 
         $this->assertEquals(200, $this->response->status());
@@ -60,7 +60,7 @@ class CommunityControllerTest extends TestCase
     {
         $communities = $this->dataset['community'];
         $id = count($communities) + 1;
-        $response = $this->get('/api/2019/community/organizer/' . $id);
+        $response = $this->get('/2019/community/organizer/' . $id);
 
         $this->assertEquals(404, $this->response->status());
 
@@ -75,7 +75,7 @@ class CommunityControllerTest extends TestCase
     {
         $communities = $this->dataset['community'];
         $id = "GDC";
-        $response = $this->get('/api/2019/community/organizer/' . $id);
+        $response = $this->get('/2019/community/organizer/' . $id);
 
         $this->assertEquals(400, $this->response->status());
 
@@ -90,7 +90,7 @@ class CommunityControllerTest extends TestCase
     {
         $participants = $this->dataset['participant'];
         $id = rand(1, count($participants));
-        $response = $this->get('/api/2019/community/participant/' . $id);
+        $response = $this->get('/2019/community/participant/' . $id);
         $compared = $this->searchTargetById($participants, $id);
 
         $this->assertEquals(200, $this->response->status());
@@ -106,7 +106,7 @@ class CommunityControllerTest extends TestCase
     {
         $participants = $this->dataset['participant'];
         $id = count($participants) + 1;
-        $response = $this->get('/api/2019/community/participant/' . $id);
+        $response = $this->get('/2019/community/participant/' . $id);
 
         $this->assertEquals(404, $this->response->status());
 
@@ -121,7 +121,7 @@ class CommunityControllerTest extends TestCase
     {
         $participants = $this->dataset['participant'];
         $id = "AAPD";
-        $response = $this->get('/api/2019/community/participant/' . $id);
+        $response = $this->get('/2019/community/participant/' . $id);
 
         $this->assertEquals(400, $this->response->status());
 

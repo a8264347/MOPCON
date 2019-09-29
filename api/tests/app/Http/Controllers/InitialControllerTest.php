@@ -11,7 +11,7 @@ class InitialControllerTest extends TestCase
         putenv('APP_ENV=' . $env);
 
         /** action **/
-        $response = $this->call('GET', '/api/2019/initial');
+        $response = $this->call('GET', '/2019/initial');
         $result = json_decode($response->getContent(), true);
 
         /** assert **/

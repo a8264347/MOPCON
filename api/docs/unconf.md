@@ -69,7 +69,7 @@
 
 - **URL**
 
-  /api/2019/unconf
+  /2019/unconf
 
 - **Method**
 
@@ -173,7 +173,7 @@
 
 - **URL**
 
-  `/api/2019/unconf/list`
+  `/2019/unconf/list`
 
 - **Method**
 
@@ -264,7 +264,7 @@
 
 - **URL**
 
-  `/api/2019/unconf/:session_id`
+  `/2019/unconf/:session_id`
 
 - **Method**
 

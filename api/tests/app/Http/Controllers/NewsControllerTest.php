@@ -14,7 +14,7 @@ class NewsControllerTest extends TestCase
     
     public function testAllNews()
     {
-        $response = $this->call('GET', '/api/2019/news');
+        $response = $this->call('GET', '/2019/news');
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(true, $result['success']);
     }
@@ -22,7 +22,7 @@ class NewsControllerTest extends TestCase
     public function testSpecificNews()
     {
         $id = '1';
-        $response = $this->call('GET', '/api/2019/news/' . $id);
+        $response = $this->call('GET', '/2019/news/' . $id);
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(true, $result['success']);
     }
@@ -30,7 +30,7 @@ class NewsControllerTest extends TestCase
     public function testWrongSpecificNews()
     {
         $id = 'abc';
-        $response = $this->call('GET', '/api/2019/news/' . $id);
+        $response = $this->call('GET', '/2019/news/' . $id);
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(false, $result['success']);
     }

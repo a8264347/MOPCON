@@ -17,7 +17,7 @@ class SponsorController extends TestCase
 
     public function testGetAllSponsor()
     {
-        $response = $this->call('GET', '/api/2019/sponsor');
+        $response = $this->call('GET', '/2019/sponsor');
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(true, $result['success']);
     }
@@ -26,7 +26,7 @@ class SponsorController extends TestCase
     {
         $data = [];
         $id = ['1', '2'];
-        $response = $this->call('GET', '/api/2019/sponsor?sponsor_id=' . implode(',', $id));
+        $response = $this->call('GET', '/2019/sponsor?sponsor_id=' . implode(',', $id));
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(true, $result['success']);
     }
@@ -35,7 +35,7 @@ class SponsorController extends TestCase
     {
         $data = [];
         $id = ['aaa', 'bbb'];
-        $response = $this->call('GET', '/api/2019/sponsor?sponsor_id=' . implode(',', $id));
+        $response = $this->call('GET', '/2019/sponsor?sponsor_id=' . implode(',', $id));
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(false, $result['success']);
     }

@@ -49,7 +49,7 @@
 
 - **URL**
 
-  /api/2019/session
+  /2019/session
 
 - **Method**
 
@@ -346,7 +346,7 @@
 
 - **URL**
 
-  /api/2019/session/list?tags=:tags
+  /2019/session/list?tags=:tags
 
 - **Method**
 
@@ -357,7 +357,7 @@
     **Optional:**
 
     - tags=[string]
-      - e.g., `/api/2019/session/list?tags=ai,cloud`
+      - e.g., `/2019/session/list?tags=ai,cloud`
 
 - **Success Response**
 
@@ -465,7 +465,7 @@
 
 - **URL**
 
-  /api/2019/session/:session_id
+  /2019/session/:session_id
 
 - **Method**
 

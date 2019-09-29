@@ -24,14 +24,14 @@ class AppHomeController extends TestCase
             $bannerFileName = 'banner-dev.json';
         }
         $this->banner = json_decode(file_get_contents($path . $bannerFileName), true);
-        $newsRequest = $this->get('api/2019/news')->response->getContent();
+        $newsRequest = $this->get('/2019/news')->response->getContent();
         $newsResponse = json_decode($newsRequest, true);
         $this->news = $newsResponse['data'] ?? [];
     }
 
     public function testGetAppHomeInfo()
     {
-        $response = $this->get('/api/2019/home/');
+        $response = $this->get('/2019/home/');
         $compared = [];
         $compared['banner'] = array_map(function ($value) {
             $value['img'] = url($value['img']);

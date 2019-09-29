@@ -16,7 +16,7 @@
 
 - **URL**
 
-    /api/2019/volunteer
+    /2019/volunteer
 
 - **Method**
 
@@ -73,7 +73,7 @@
 
 - **URL**
 
-  /api/2019/volunteer/:id
+  /2019/volunteer/:id
 
 - **Method**
 

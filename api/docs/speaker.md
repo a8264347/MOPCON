@@ -41,7 +41,7 @@
 
 - **URL**
 
-  `/api/2019/speaker`
+  `/2019/speaker`
 
 - **Method**
 
@@ -169,7 +169,7 @@
 
 - **URL**
 
-  `/api/2019/speaker/:id`
+  `/2019/speaker/:id`
 
 - **Method**
 
@@ -280,7 +280,7 @@
 
 - **URL**
 
-  `/api/2019/speaker/tags`
+  `/2019/speaker/tags`
 
 - **Method**
 
