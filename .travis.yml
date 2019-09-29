@@ -1,11 +1,25 @@
+.build: &build_api_image
+  script:
+    - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./.travis/docker_api_build.sh; fi
+
 language: php
 php:
   - '7.2'
 cache:
   directories:
     - $HOME/.composer/cache
-script:
-  - composer install
-  - cd api
-  - composer install
-  - ./vendor/bin/phpunit
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - composer install
+        - cd api
+        - composer install
+        - ./vendor/bin/phpunit
+    - stage: build develop api
+      if: branch = feature/create-api-docker
+      <<: *build_api_image
