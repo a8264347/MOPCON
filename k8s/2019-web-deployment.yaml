@@ -1,0 +1,51 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mopcon-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: staging.mopcon.org
+      http:
+        paths:
+          - path: /2019
+            backend:
+              serviceName: web-2019
+              servicePort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-2019
+  labels:
+    app: web-2019
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: web-2019
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-2019
+  labels:
+    app: web-2019
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-2019
+  template:
+    metadata:
+      labels:
+        app: web-2019
+    spec:
+      containers:
+        - name: web-2019
+          image: mopcon/2019-web:dev
+          ports:
+            - containerPort: 3000

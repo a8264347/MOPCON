@@ -150,6 +150,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     'nuxt-svg-loader',
+    '@nuxtjs/proxy',
     // 全域 sass 變數設定
     '@nuxtjs/style-resources',
   ],
@@ -173,7 +174,10 @@ module.exports = {
    ** Axios module configuration
    */
   axios: {
-    baseURL: `${process.env.PROXY_URL}${process.env.BASE_URL}`,
+    proxy: true
+  },
+  proxy: {
+    '/api': 'https://mopcon.org'
   },
 
   /*

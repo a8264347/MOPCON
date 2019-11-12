@@ -1,11 +1,12 @@
-language: php
-php:
-  - '7.2'
-cache:
-  directories:
-    - $HOME/.composer/cache
+language: node_js
+node_js:
+  - '8.12'
+services:
+  - docker
+if: branch = feature/create-2019-docker
 script:
-  - composer install
-  - cd api
-  - composer install
-  - ./vendor/bin/phpunit
+  - cd 2019-dev
+  - yarn install
+  - yarn build
+  - cd ../
+  - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./.travis/docker_web_build.sh; fi
