@@ -1,0 +1,55 @@
+{
+  "title": "banner API",
+  "description": "提供 banner 資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "object",
+      "items": {
+        "type": "array",
+        "required": [
+          "banner",
+          "news"
+        ]
+      },
+      "properties": {
+        "banner": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "img",
+              "link"
+            ],
+            "items": {
+              "img": {
+                "type": "string",
+                "description": "banner 圖片 url"
+              },
+              "link": {
+                "type": "string",
+                "description": "banner 所在連結"
+              }
+            }
+          }
+        },
+        "news": {
+          "type": "array",
+          "description": "news spreadsheets 訊息"
+        }
+      }
+    }
+  }
+}
