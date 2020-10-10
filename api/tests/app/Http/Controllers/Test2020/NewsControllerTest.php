@@ -21,6 +21,7 @@ class NewsControllerTest extends TestCase
         $response = $this->call('GET', '/api/2019/news');
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(true, $result['success']);
+        $this->assertJsonStringValidatedAgainstJsonSchemaFile('2020/news.json', $response->getContent());
     }
 
     public function testSpecificNews()
@@ -29,6 +30,7 @@ class NewsControllerTest extends TestCase
         $response = $this->call('GET', '/api/2019/news/' . $id);
         $result = json_decode($response->getContent(), true);
         $this->assertEquals(true, $result['success']);
+        $this->assertJsonStringValidatedAgainstJsonSchemaFile('2020/news-show.json', $response->getContent());
     }
 
     public function testWrongSpecificNews()
